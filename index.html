@@ -1,0 +1,48 @@
+<html>		
+<head>
+	<title>MyPhoto</title>
+	<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+	<link rel="stylesheet" href="css/default.css" />
+</head>
+<body>
+<div class="head">
+<img id="logo"  src="e:web/logo1.gif"  width="200" height="70" hspace="50"/>
+
+</div>
+<div class="body">This is body
+<label>user</label><input id="user" value=""/>
+<label>password</label><input id="passwd" value=""/><span id="infops" style="display:none;">hi</span>
+<button id="login" name = "login" value="login">login</button>
+</div>
+<div class="footer">Support by Mike; Email:<a href="mailto:fangbolang@163.com">fangbolang@163.com</a></div>
+</body>
+<script type="text/javascript">
+		
+		$("#login").click(function(){
+			var user = $("#user").val();
+			var passwd = $("#passwd").val();
+			
+			if((user===null) || (passwd===null)){
+				alert('empty user or password');
+				return;
+			}
+			$.post("login.php",
+			{
+				user:$("#user").val(),
+				passwd:$("#passwd").val()
+			},
+			function(data,status){
+				if(status){
+					alert(data);
+				}else{
+					alert('1211');
+				}
+			});
+		});
+		$("#passwd").mouseenter(function(){
+			$("#infops").show();
+		}).mouseleave(function(){
+			$("#infops").hide();
+		});
+	</script>
+</html>

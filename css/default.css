@@ -1,0 +1,23 @@
+.head{
+	background:#000000 url(e:web/logobkg2.gif);
+	background-size:150px 75px;
+	background-position:right;
+	height:70px;
+	width:100%;
+	
+}
+.body{
+	background-color:#BABABA;
+	height:1000px;
+	width:100%;
+	
+}
+.footer{
+	background-color:#030303;
+	height:70px;
+	width:100%;
+	
+}
+#logo{
+	align:right;
+}
